@@ -1,6 +1,7 @@
 # Note-Taking App
 
 A simple and intuitive note-taking application built using **Express.js**, **HTML**, **CSS**, and **JavaScript**. This app allows users to create, edit, and delete notes, as well as view and manage them in a sidebar interface.
+- Live app in URL here: https://note-taker-app-s0ne.onrender.com/
 
 ---
 ## Demo
