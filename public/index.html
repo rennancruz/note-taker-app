@@ -15,7 +15,7 @@
 
   <body>
     <nav class="navbar bg-info">
-      <a class="navbar-brand text-light p-3" href="/">Note Taker </a>
+      <a class="navbar-brand text-light p-3" href="/">Note Taker</a>
     </nav>
     <div class="container">
       <div style="margin-top: 80px" class="text-center p-5 mb-4 bg-light">
@@ -28,6 +28,29 @@
         >
       </div>
     </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4 list-container" id="list-container">
+          <div class="card">
+            <!-- List of notes will be dynamically populated here -->
+            <ul class="list-group" id="note-list"></ul>
+          </div>
+        </div>
+        <div class="col-8">
+          <form class="note-form">
+            <input
+              class="note-title"
+              placeholder="Note Title"
+              maxlength="28"
+              type="text"
+            />
+            <textarea class="note-textarea" placeholder="Note Text"></textarea>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="/assets/js/index.js"></script>
   </body>
 </html>
