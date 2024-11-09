@@ -58,6 +58,28 @@ app.post("/api/notes", async (req, res) => {
   }
 });
 
+// Update an existing note by ID
+app.put("/api/notes", async (req, res) => {
+  try {
+    const updatedNote = req.body;
+    const data = await readFile("./db/db.json", "utf8");
+    const notes = JSON.parse(data);
+
+    // Find the note by ID and update its content
+    const noteIndex = notes.findIndex((note) => note.id === updatedNote.id);
+    if (noteIndex !== -1) {
+      notes[noteIndex] = updatedNote; // Update the note
+      await writeFile("./db/db.json", JSON.stringify(notes, null, 2));
+      res.json(updatedNote); // Return the updated note
+    } else {
+      res.status(404).json({ error: "Note not found" });
+    }
+  } catch (err) {
+    console.error("Error updating note:", err);
+    res.status(500).json({ error: "Error updating note" });
+  }
+});
+
 // Delete a note by ID
 app.delete("/api/notes/:id", async (req, res) => {
   try {
